@@ -1,0 +1,60 @@
+<div class="wrapper" (click)="clickOutSide()">
+    <div class="inner-content d-flex">
+        <div class="group parent">
+            <div class="content">
+                <div class="title"><img class="img-title" src="assets/images/icon/ic_group.png">
+                    {{'ADMIN.GROUP.GROUP' | translate}}
+                    <i class='fas fa-caret-down icon-dow' data-toggle="collapse" href="#group-parent-container"
+                        style='font-size:24px'></i>
+                </div>
+                <div id="group-parent-container" class="collapse show data" data-parent="#group-parent-container">
+                    <app-item-group-user class="" style="cursor: pointer" *ngFor="let item of data.groups" [item]="item"
+                        (click)="chooseGroup(item)">
+                    </app-item-group-user>
+                </div>
+            </div>
+        </div>
+        <div class="group child">
+            <div class="content">
+                <div class="title">
+                    {{ 'ADMIN.GROUP.MEMBER' | translate}}
+                    <i class='fas fa-caret-down icon-dow' data-toggle="collapse" href="#group-member-container"
+                        style='font-size:24px'></i>
+                </div>
+                <div id="group-member-container" class=" data collapse show" data-parent="#group-member-container">
+                    <app-item-group-user style="cursor: pointer" (click)="chooseMember(item)" [showImage]="true"
+                        [type]="true" *ngFor="let item of data.members" [item]="item">
+                    </app-item-group-user>
+                </div>
+            </div>
+        </div>
+        <div class="group messa">
+            <div class="content">
+                <div class="title d-flex justify-content-end align-items-center end">
+                    <!-- {{ 'ADMIN.GROUP.MEMBER' | translate}} -->
+                    <div class="action d-flex  align-items-center">
+                        <button class="btn" (click)="changelang('en')"
+                            [ngClass]="{'btn-orange-im': data.lang == 'en'}">A</button>
+                        <button class="btn" [ngClass]="{'btn-orange-im': data.lang == 'ja'}"
+                            (click)="changelang('ja')">文</button>
+                        <!-- <i class="material-icons" style="font-size:30px">settings</i>   -->
+                    </div>
+                </div>
+                <div class="data" id="group-member-mess" (scroll)="loadmore()">
+                    <p class="text-grey" style="text-align: center" *ngIf="!data.messages[0]">
+                        {{ 'ADMIN.MESSAGE.NONE' | translate}}</p>
+                    <app-item-message [left]="true" [type]="2" *ngFor="let item of data.messages" [item]="item">
+                    </app-item-message>
+                </div>
+                <div class="actions" id="reply" *ngIf="data.accept_chat == true&&case_log==true">
+                    <app-reply-message (outputSent)="sentMessage($event)"></app-reply-message>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-alert-confirm [id]="'alert-contact'" [title]="message.title" [message]="message.message" [mode]="message.mode"
+    (saveConfirm)="saveConfirm()">
+</app-alert-confirm>
+<app-loading></app-loading>

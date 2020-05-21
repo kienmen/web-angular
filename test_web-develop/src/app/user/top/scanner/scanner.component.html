@@ -1,0 +1,82 @@
+<div class="inner_scanner">
+  <div style="margin-bottom: 1rem" class="scanner-shell text-light-black" [hidden]="!hasDevices">
+    <header>
+      <select (change)="onDeviceSelectChange($event.target.value)">
+        <option value="" [selected]="!currentDevice">{{ 'SCANNER.NO_DEVIDER' | translate }}</option>
+        <option *ngFor="let device of availableDevices" [value]="device.deviceId"
+          [selected]="currentDevice && device.deviceId === currentDevice.deviceId">{{device.label}}</option>
+      </select>
+    </header>
+
+    <zxing-scanner [scannerEnabled]="scannerEnabled" #scanner [device]="currentDevice" (scanSuccess)="handleQrCodeResult($event)"
+      [formats]="['EAN_13', 'CODE_128', 'QR_CODE']" [tryHarder]="true"></zxing-scanner>
+   
+  </div>
+
+  <ng-container *ngIf="hasPermission === undefined">
+
+    <h2>{{ 'SCANNER.WAIT' | translate }}</h2>
+
+    <blockquote>
+      {{ 'SCANNER.DEVICE_HAS_NOT_CAMERA' | translate }}
+    </blockquote>
+
+  </ng-container>
+
+  <ng-container *ngIf="hasPermission === false">
+
+      
+      <h2>{{ 'SCANNER.DENIED' | translate }}</h2>
+
+  </ng-container>
+
+  <ng-container *ngIf="hasDevices === undefined">
+
+    <h2>{{ 'SCANNER.CHECK_DEVICE' | translate }}</h2>
+
+    <blockquote>
+      {{ 'SCANNER.SECURITY_ERR' | translate }}
+    </blockquote>
+
+  </ng-container>
+
+  <ng-container *ngIf="hasDevices === false">
+
+    <h2>{{ 'SCANNER.NO_DEVICE_FOUND' | translate }}</h2>
+
+    <blockquote>
+      {{ 'SCANNER.BLEVIED' | translate }}
+    </blockquote>
+
+  </ng-container>
+
+  <footer>
+    <table class="table-scanner-state">
+      <thead>
+        <tr>
+          <th>{{ 'SCANNER.STATUS' | translate }}</th>
+          <th>{{ 'SCANNER.PROPERTY' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ stateToEmoji(hasDevices) }}</td>
+          <td>{{ 'SCANNER.DEVICE' | translate }}</td>
+        </tr>
+        <tr>
+          <td>{{ stateToEmoji(hasPermission) }}</td>
+          <td>{{ 'SCANNER.PERMISSTION' | translate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </footer>
+
+  <div class="function">
+    <button class="btn btn-orange text-light-black"[routerLink]="['/dashboard']" routerLinkActive="router-link-active" > {{'DASHBOARD.HOME' | translate }}</button>
+  </div>
+</div>
+
+<app-alert-confirm [id]="'alert-scanner'" [title]="message.title" [message]="message.message" [mode]="message.mode"
+  (saveConfirm)="saveConfirm()">
+</app-alert-confirm>
+<app-loading></app-loading>

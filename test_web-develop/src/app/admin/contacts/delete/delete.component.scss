@@ -1,0 +1,45 @@
+.wrapper-modal {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+        background-color: white;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 10px;
+
+        p {
+            font-size: 20px;
+        }
+
+        div.function {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-evenly;
+
+            button {
+                font-size: 15px;
+                min-width: 80px;
+            }
+        }
+    }
+}
+
+
+@media(max-width:768px) {
+    .wrapper-modal {
+        align-items: flex-start;
+        padding-top: 8rem;
+    }
+}

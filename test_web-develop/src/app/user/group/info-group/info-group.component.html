@@ -1,0 +1,29 @@
+<div class="container-fluid group align-items-center justify-content-center d-flex">
+    <div class="row col-md-8 inner-group d-flex  justify-content-around flex-column">
+        <div class="top-info text-light-red d-flex align-items-center justify-content-around flex-column ">
+            <p>{{info['title']}}</p>
+        <hr>
+            <p><img src="assets/images/icon/ic_group_red.png">{{ info['total_user'] || '0' }}人</p>
+        </div>
+        <div class="bottom-info ">
+            <div class="element info-own   d-flex align-items-center justify-content-center flex-column">
+                <span class="badge badge-dark">owner</span>
+                <p class="text-grey name">
+                    {{info.user.nick_name}}
+                </p>
+                <p class="text-grey nick">
+                   {{ info.user.id}}
+                </p>
+            </div>
+            <div class=" element function  d-flex align-items-center justify-content-around flex-column">
+                <button class="btn btn-orange text-light-black" *ngIf="info['id']" (click)="join()">{{ 'SCANNER.JOIN' | translate }}</button>
+                <button class="btn btn-white text-light-black" *ngIf="info['id']" [routerLink]="['/dashboard']" > {{'SCANNER.CANCLE' | translate }}</button>
+                <button class="btn btn-white text-light-black" *ngIf="!info['id']" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" > {{'DASHBOARD.HOME' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-alert-confirm [id]="'alert-qr'" [title]="message.title" [message]="message.message" [mode]="message.mode"
+  (saveConfirm)="saveConfirm()">
+</app-alert-confirm>
+<app-loading></app-loading>

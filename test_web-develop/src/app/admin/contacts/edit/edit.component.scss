@@ -1,0 +1,32 @@
+.wrapper-modal {
+    .content {
+        padding: 0 !important;
+
+        .title {
+            background-color: #bc1220;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 15px;
+            width: 100%;
+            display: flex;justify-content: center;align-items: center;
+        }
+        .form{
+            padding: 30px;
+            .form-group{
+                display: flex;
+                flex-direction: column;
+                div{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 0;
+                }
+            }
+        }
+        .function{
+            margin-top: 0px!important;
+            padding:  0 30px 30px 10px;
+        }
+    }
+
+}

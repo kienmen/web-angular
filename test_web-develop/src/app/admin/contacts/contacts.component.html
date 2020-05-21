@@ -1,0 +1,71 @@
+<div class=" wrapper" (click)="clickOutSide()">
+    <div class="inner-content">
+        <div class="group parent">
+            <div class="content">
+                <p class="title"><img src="assets/images/icon/ic_group.png">
+                    {{'ADMIN.GROUP.GROUP' | translate}}
+                    <i class='fas fa-caret-down icon-dow' data-toggle="collapse" href="#group"
+                        style='font-size:24px'></i>
+                </p>
+                <div class="data box-search" id="group-container">
+                    <div id="group" class="collapse show " data-parent="#group-container">
+                        <app-item-group-user [showImage]="true" style="cursor: pointer" *ngFor="let item of data.groups"
+                            [item]="item" (click)="chooseItem(item)">
+                        </app-item-group-user>
+                     
+                    </div>
+                </div>
+                <label class="label-search">
+                    <input type="text"  #searchs id="search"  (keyup)="search(searchs.value)" class="search form-control" placeholder="{{ 'ALERT.SEARCH' | translate}}">
+                </label>
+            </div>
+        </div>
+        <div class="group child">
+            <div class="content">
+                <p class="title">{{ 'ADMIN.GROUP.MEMBER' | translate}}
+                    <i class='fas fa-caret-down icon-dow' data-toggle="collapse" href="#group-member"
+                        style='font-size:24px'></i>
+                </p>
+                <div class="data" id="group-member-container">
+                    <div id="group-member" class="collapse show" data-parent="#group-member-container">
+                        <app-item-group-user [showImage]="true"
+                            [ngStyle]="{'cursor': data_blind.showdeletemessage ==true ||data_blind.showdelete ==true || data_blind.showblock ==true  || data_blind.showedit ==true ? 'not-allowed': 'pointer'}"
+                            [type]="true" *ngFor="let item of data.members" [item]="item" (click)="chooseMember(item)">
+                        </app-item-group-user>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="messa" id="messa">
+            <app-item-message (ouputClick)="deteteMessageItem($event)" *ngFor="let item of data.messages" [item]="item" [type]="1" [left]="false">
+            </app-item-message>
+
+            <p class="text-grey" style="text-align: center" *ngIf="data.messages.length == 0">
+                {{ 'ADMIN.MESSAGE.NONE' | translate}}</p>
+        </div>
+        <div class="modal-delete" *ngIf="data_blind.showdelete">
+            <app-delete [type]="1" [text]="'ADMIN.ALERT.DO_YOU_WANNA_DELETE'" (ouputClick)="deleleItemGroup($event)">
+            </app-delete>
+        </div>
+        <div class="modal-block" *ngIf="data_blind.showblock">
+            <app-block (ouputClick)="handleBlockItem()"></app-block>
+        </div>
+        <div class="modal-edit" *ngIf="data_blind.showedit">
+            <app-edit [data]="data.detail_room" (ouputClick)="handleEditItem($event)"></app-edit>
+        </div>
+        <div class="modal-edit" *ngIf="data_blind.showDeleleMessage">
+            <app-delete [type]="2" [text]="'ADMIN.ALERT.DO_YOU_WANNA_DELETE_MESSAGE'"
+                (ouputClick)="handleDeteteMessage($event)"></app-delete>
+        </div>
+        <div class="modal-edit" *ngIf="data_blind.showdetail">
+            <app-info-member (ouputClose)="closeMember()" [info]="data.detail_member" [step]="data_blind.steprole"
+                [messageRole]="data_blind.messagerole" (ouputClick)="handleUpgradeRole($event)">
+            </app-info-member>
+        </div>
+    </div>
+</div>
+
+<app-alert-confirm [id]="'alert-contact'" [title]="message.title" [message]="message.message" [mode]="message.mode"
+    (saveConfirm)="saveConfirm()">
+</app-alert-confirm>
+<app-loading></app-loading>

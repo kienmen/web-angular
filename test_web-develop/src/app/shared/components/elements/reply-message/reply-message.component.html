@@ -1,0 +1,8 @@
+<div class="inner-reply">
+    <div class="input-group mb-3">
+        <textarea id="text" #text type="text" class="form-control" placeholder="{{ 'UTILS.MESSAGE' | translate}}"></textarea>
+        <div class="input-group-append">
+            <span (click)="emitData(text.value)" class="btn  input-group-text">{{ 'UTILS.SENT' | translate}}</span>
+        </div>
+    </div>
+</div>

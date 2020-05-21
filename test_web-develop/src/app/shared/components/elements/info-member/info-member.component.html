@@ -1,0 +1,57 @@
+<div class="wrapper-modal d-flex justify-content-center align-items-center">
+    <div class="content d-flex align-items-center flex-column row col-md-10 col-xl-8">
+        <div class="info" *ngIf="step == 1">
+            <div class="avatar-wrapper">
+                <img src="{{ (info['profile'] | link) || 'assets/images/icon/ic_user_default.png' }}" onError="this.src='assets/images/icon/ic_user_default.png'">
+            </div>
+            <div class="info-wrapper text-grey">
+                <div class="group top">
+                    <p class="text-grey text-bold">{{info['name']}}</p>
+                    <p>{{info['user_name']}}</p>
+                </div>
+                <div class="group child">
+                    <img src="assets/images/icon/ic_mail.png">: &nbsp;
+                    <p>{{info['email']}}</p>
+                </div>
+                <div class="group child">
+                    <img src="assets/images/icon/ic_name.png">: &nbsp;
+                    <p>{{info['fullname']}}</p>
+                </div>
+                <div class="group child">
+                    <img src="assets/images/icon/ic_phone.png">: &nbsp;
+                    <p>{{info['phone_number']}}</p>
+                </div>
+                <div class="group child">
+                    <img src="assets/images/icon/ic_old.png">: &nbsp;
+                    <p>{{info['old']}}</p>
+                </div>
+                <div class="group child">
+                    <img src="assets/images/icon/ic_smile.png">: &nbsp;
+                    <p>{{info['smile']}}</p>
+                </div>
+                <div class="group child">
+                    <img src="assets/images/icon/ic_gender.png">: &nbsp;
+                    <p>{{ (info['gender'] == 1 ? 'ADMIN.ROLE.MALE': 'ADMIN.ROLE.FEMALE') | translate}}</p>
+                </div>
+                <div class="group child">
+                    <img src="assets/images/icon/ic_lang.png">: &nbsp;
+                    <p>{{(info['lang']  == 1 ? 'ADMIN.ROLE.ENGLISH' : 'ADMIN.ROLE.JAPAN' ) | translate}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert-modal d-flex align-items-center flex-column text-grey" *ngIf="step == 2">
+            <img src="{{  (info['profile'] | link)|| 'assets/images/icon/ic_user_default.png' }}" onError="this.src='assets/images/icon/ic_user_default.png'">
+            <p class="bold">{{info['name'] }}</p>
+            <p>{{info['user_name'] }}</p>
+            <p class="message">
+                {{ messageRole | translate}}
+            </p>
+        </div>
+        <div class="function d-flex align-items-center justify-content-center" *ngIf="step == 1">
+            <button class="btn btn-orange text-bold text-light-black"
+                (click)="click()">{{'ADMIN.ROLE.UPGRAGE' | translate}}</button>
+        </div>
+        <span class="close" (click)="close()">&times;</span>
+    </div>
+</div>

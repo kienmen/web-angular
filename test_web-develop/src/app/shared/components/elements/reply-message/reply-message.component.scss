@@ -1,0 +1,16 @@
+.inner-reply{
+    display: block;
+    height: 100px;
+    .input-group{
+        textarea{
+            resize: none;
+            outline: none;
+            box-shadow: none;
+            border: 1px solid  0.5px #e2e2e2;
+            overflow: hidden;
+        }
+        .input-group-text{
+            cursor: pointer;
+        }
+    }
+}

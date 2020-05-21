@@ -1,0 +1,67 @@
+<div class="modal d-flex align-items-center justify-content-center">
+    <div class="content col-md-10 col-lg-8 flex-column align-items-center" *ngIf="case_register == 1">
+        <p class="text-light-black text-center">{{ 'REGISTER.REGISTER' | translate }}</p>
+
+        <div  *ngIf="message['status_code']== 400"  class="form" [formGroup]="fomrRegister">
+            <p class="d-flex  align-items-center"><i class="material-icons mr-3"
+                    style="font-size:36px;color:red">language</i>JP-日本 </p>
+            <div class="group">
+                <i class="material-icons " style="font-size:36px;color:red">phone_iphone</i>
+                <input class="form-cl" formControlName="phone" type="text"
+                    placeholder="{{'REGISTER.PLACEHODER_TELE' | translate }}">
+                <div class="text-errors" style="font-size: 16px" *ngIf="formErrors.phone">
+                    {{formErrors.phone | translate}}
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="message['status_code']== 200" class="form">
+            <p class="message text-light-black text-center" *ngIf="message['status_code'] == 200&&message['message']"
+                style="font-size: 16px">
+                {{message['message'] | translate}}</p>
+        </div>
+
+        <div class="function d-flex align-items-center justify-content-center">
+            <button *ngIf="message['status_code'] == 400" (click)="save()" [disabled]="fomrRegister.invalid"
+                class="btn btn-orange">{{ 'REGISTER.SAVE' | translate }}
+            </button>
+
+            <button *ngIf="message['status_code'] == 200 && message['message']" (click)="back()"
+                class="btn btn-white">{{ 'UTILS.BACK_EMOJI' | translate }}</button>
+            <button *ngIf="message['status_code'] == 200 && message['message']  && message['success']"
+                (click)="resent()" class="btn btn-orange">{{ 'UTILS.RESENT' | translate }}</button>
+        </div>
+        <span (click)="close()">&times;</span>
+    </div>
+
+    <div class="content col-md-10 col-lg-8 flex-column align-items-center" *ngIf="case_register == 2">
+        <p class="text-light-black text-center">{{ 'LOGIN.REGISTER_EMAIL' | translate }}</p>
+
+        <div  *ngIf="message['status_code']== 400"  class="form" [formGroup]="fomrRegisterEmail">
+            <p class="d-flex  align-items-center">
+                <i class="fas fa-envelope mr-3"  style="font-size:36px;color:red"></i>
+                {{ 'LOGIN.EMAIL' | translate }}</p>
+            <div class="group">
+                <!-- <i class="material-icons " style="font-size:36px;color:red">phone_iphone</i> -->
+                <input class="form-cl" formControlName="email" type="text"
+                    placeholder="{{'LOGIN.EMAIL' | translate }}">
+                <div class="text-errors" style="font-size: 16px" *ngIf="formErrors.email">
+                    {{formErrors.email | translate}}
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="message['status_code']== 200" class="form">
+            <p class="message text-light-black text-center" *ngIf="message['status_code'] == 200&&message['message']"
+                style="font-size: 16px">
+                {{message['message'] | translate}}</p>
+        </div>
+
+        <div class="function d-flex align-items-center justify-content-center">
+            <button (click)="registerEmail()" [disabled]="fomrRegisterEmail.invalid"
+                class="btn btn-orange">{{ 'REGISTER.SAVE' | translate }}
+            </button>
+        </div>
+        <span (click)="close()">&times;</span>
+    </div>
+</div>

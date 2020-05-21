@@ -1,0 +1,91 @@
+
+.pageerr404 {
+    margin: 5rem 0;
+}
+
+.custom {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.txt {
+    text-transform: uppercase;
+    background: linear-gradient(to right, #222c40 50%,#de0012);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pageerror-top {
+    text-align: center;
+    margin-bottom: 3px;
+
+    img {
+        width: 20vw;
+    }
+}
+
+.pageerror-404 {
+    line-height: 1;
+
+    .pper {
+        font-weight: bold;
+    }
+
+    .c404 {
+        font-size: 10rem;
+        text-align: center;
+    }
+
+    .title404 {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+}
+
+.pageerror-center {
+    margin: 3rem 0;
+
+    h6 {
+        text-align: center;
+    }
+}
+
+.pageerror-footer {
+    text-align: center;
+
+    a {
+
+        // color:#f29703;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media(max-width:414px) {
+    .pageerror-top {
+        img {
+            width: 50%;
+        }
+    }
+
+    .pageerror-404 {
+        .c404 {
+            font-size: 6rem;
+        }
+
+        .title404 {
+            font-size: 2rem;
+        }
+    }
+
+    .pageerror-center {
+        margin: 2.5rem 0;
+
+        h6 {
+            font-size: 0.6rem;
+        }
+    }
+}

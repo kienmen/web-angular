@@ -1,0 +1,101 @@
+@import "./variables.scss";
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+.form {
+    max-width: 768px;
+    .form-group {
+        .label {
+            color: $cl-grey;
+            font-size: 16px;
+        }
+
+        .form-control {
+            border-radius: 4px;
+            // border: solid 1px $cl-grey;
+        }
+        textarea{
+            width: 100%;
+            resize: none;
+            padding: 10px;
+            font-weight: 300;
+        }
+        textarea::placeholder{
+            color: $cl-placeholder;
+            font-size: 16px;
+            color: $cl-grey;
+        }
+    }
+}
+
+//BUTTON
+.btn-well-primary{
+    border-radius: 19px;
+    box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+    background-color: $cl-purple-light;
+    color: white;
+}
+
+.btn:disabled{
+    cursor: not-allowed;
+    background-color: #c1c1c1;
+}
+
+.btn-orange{
+    background-color: $cl-light-orange;
+    border-radius: 14px;
+    box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+}
+.btn-white{
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+}
+
+//TEXT 
+.text-black-well{
+    color: $cl-black;
+}
+
+.text-errors{
+    color:red;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.text-grey{
+    color: $cl-grey;
+}
+.text-white{
+    color: white;
+}
+.text-light-black{
+    color: $cl-light-black;
+}
+.text-light-red{
+    color: $cl-red;
+}
+// BACKGROUND
+.back-ground-grey{
+    background-color: $bg-grey;
+}
+.back-ground-red{
+    background-color: $cl-red;
+}
+.back-ground-light-black{
+    background-color: $cl-light-black;
+}
+.back-ground-light-orange{
+    background-color: $cl-light-orange;
+}
+.back-ground-light-grey{
+    background-color: $bg-grey-chat;
+}

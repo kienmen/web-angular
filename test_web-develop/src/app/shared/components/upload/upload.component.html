@@ -1,0 +1,13 @@
+<div class="form_upload" (click)="upload()" [id]="formUpload">
+    <input type="file" class="file_upload" [id]="fileUpload" (change)="on_change()" (click)="on_click()">
+    <div class="text" [id]="text">
+        <div>
+            <i class="fa fa-cloud-upload"></i>
+            <p>Click here to upload a file.</p>
+            <p class="error" [id]="error"> </p>
+        </div>
+    </div>
+    <div class="background" [id]="background">
+        <img>
+    </div>
+</div>

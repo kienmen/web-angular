@@ -1,0 +1,33 @@
+<div class="wrapper-modal">
+    <div class="content">
+        <p class="text-grey title"><i class="material-icons" style="font-size: 16px;margin-right:5px;">edit</i>{{'ADMIN.EDIT.EDIT' | translate}}</p>
+        <div class="form" [formGroup]="formEdit">
+            <div class="form-group">
+                <label class="label text-grey">
+                    {{ 'ADMIN.EDIT.ROOM_NAME' | translate}}
+                </label>
+                <textarea formControlName="title" placeholder="{{ 'ADMIN.EDIT.PLACE_HOLDER_ROOM_NAME' | translate}}"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="label text-grey">
+                    {{ 'ADMIN.EDIT.NEW_USER_SETTING' | translate}}
+                </label>
+                <div>
+                    <label for="can" class="text-grey" (click)="chooseType(true)">
+                        <input [checked]="formEdit.value.new_user_setting == true" id="can" type="radio" name="type">
+                        {{ 'ADMIN.EDIT.VIEW_PASS_HISTORY' | translate}}
+                    </label>
+                    <label for="cannot"  class="text-grey" (click)="chooseType(false)">
+                        <input [checked]="formEdit.value.new_user_setting == false" id="cannot" type="radio" name="type">
+                        {{ 'ADMIN.EDIT.NOT_SEE_PASS_HISSTORY' | translate}}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="function">
+            <button class="btn btn-white text-light-black" (click)="cancel()">{{'ADMIN.ALERT.CANCEL' | translate}}</button>
+            <button class="btn btn-orange text-light-black"
+                (click)="edit()">{{'ADMIN.EDIT.UPDATE' | translate}}</button>
+        </div>
+    </div>
+</div>

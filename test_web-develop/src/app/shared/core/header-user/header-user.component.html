@@ -1,0 +1,22 @@
+<div class="header back-ground-red">
+    <div class="action_item">
+        <div class="dropdown">
+            <i (click)="showmenu()" class="dropbtn" class="material-icons"
+                style="font-size:50px; color: white;">menu</i>
+            <div id="menu" class="dropdown-content">
+                <a routerLink="/"  class="text-light-black"><i
+                        class="text-light-black material-icons" style='margin-right: 5px;'>home</i>{{'DASHBOARD.HOME' |translate}}</a>
+                <a routerLink="/"  class="text-light-black"><i
+                        class="text-light-black material-icons" style='margin-right: 5px;'>lock_outline</i>{{'DASHBOARD.POLICY' |translate}}</a>
+                <a  routerLink="/"  class="text-light-black"><i class='far fa-clipboard'
+                        style='margin-left: 5px;margin-right: 10px;font-size: 20px'></i>{{'DASHBOARD.TERMOFSERVICE' |translate}}</a>
+                <a class="text-light-black" routerLink="/scanner"  ><i class='fas fa-qrcode' style='margin-left: 5px;margin-right: 8px;font-size: 20px'></i>{{'SCANNER.SCANNER' |translate}}</a>
+                <a class="text-light-black log" (click)="logout()"><i class='fas fa-sign-out-alt' style='margin-left: 5px;margin-right: 5px;font-size: 20px'></i>{{'LOGIN.LOGOUT' |translate}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="link-home">Welltool</div>
+    <div class="vi">
+       <button class="btn btn-white" (click)="logout()">{{ 'LOGIN.LOGOUT' | translate}}</button>
+    </div>
+</div>

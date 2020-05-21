@@ -1,0 +1,26 @@
+<div class="message d-flex" [ngClass]="{'left': item['type_message'] == 2}">
+    <div *ngIf="item['type_message'] == 1" class="left-time mr-2">
+        <span class="text-grey">{{item['createdAt'] | time:'MM/DD hh:mm a'}}</span>
+    </div>
+    <div *ngIf="!left" class="function d-flex flex-column justify-content-end align-items-end">
+        <!-- <span style="width: 100%" class=" text-left text-grey">{{item['number']}}</span> -->
+        <span class="text-grey">{{item['createdAt'] | time}}</span>
+        <span *ngIf="type==1" (click)="handleClick()"
+            class="delete d-flex flex-column justify-content-center align-items-center " style="cursor: pointer"><i
+                class="material-icons" style="font-size: 15px;;">delete</i></span>
+    </div>
+    <div class="content text-light-black" [ngClass]="{'back-ground-light-orange': item['message_type'] == 'text'&&item['type_message']==2,
+    'back-ground-light-grey': item['message_type'] == 'text'&&item['type_message']==1,
+    'padding-content':  item['message_type'] == 'text'}">
+        <img *ngIf="item['message_type'] == 'image'" src="{{item['message'] | link}}" alt="">
+        <div *ngIf="item['message_type'] == 'text'">
+            {{item['message']}}
+        </div>
+        <div *ngIf="item['message_type'] != 'text' && item['message_type'] != 'image'">
+            <a class="link" [href]="link_assets" target="_blank">{{item['message'] | link}}</a>
+        </div>
+    </div>
+    <div *ngIf="item['type_message'] == 2" class="left-time">
+        <span class="text-grey">{{item['createdAt'] | time:'MM/DD hh:mm a'}}</span>
+    </div>
+</div>

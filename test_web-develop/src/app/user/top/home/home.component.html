@@ -1,0 +1,62 @@
+<!-- banner -->
+<div class="row banner justify-content-center align-items-center">
+    <div class="inner-content-banner text-white mb-0 col-lg-10 text">
+        {{ 'TOP.THROUGHT_LANGUAGE' | translate }}<br>{{ 'TOP.BROADCASD' | translate }}
+    </div>
+</div>
+<!-- option -->
+<div class="row option ">
+    <div class="inner-content-option d-flex  flex-column col-lg-10  m-auto ">
+        <p class="text-light-black title"> {{ 'TOP.CAN_ACCEPT_WITHOUT_DOWLOAD_APP' | translate }}</p>
+        <div class="box-item d-flex justify-content-between ">
+            <div class="item d-flex">
+                <img src="assets/images/icon/ic_telephone.png">
+                <div class="ml-4 d-flex justify-content-between flex-column">
+                    <h3 class="">Pattern 1</h3>
+                    <p class="text-light-black">
+                        {{ 'TOP.GIVE_PHONE_FIRST' | translate }}<br>
+                        {{ 'TOP.GIVE_PHONE_SECOND' | translate }}<br>
+                        {{ 'TOP.GIVE_PHONE_THIRST' | translate }}<br>
+                    </p>
+                    <a class="link" (click)="show(1)"> {{ 'TOP.TALK' | translate }}</a>
+                </div>
+            </div>
+            <div class="item none d-flex">
+                <img src="assets/images/icon/ic_qrcode.png">
+                <div class="ml-4 d-flex justify-content-between flex-column">
+                    <h3 class="text-light-black">Pattern 2</h3>
+                    <p class="text-light-black">
+                        {{ 'TOP.SCAN_QR_CODE_FIRST' | translate }}<br>
+                        {{ 'TOP.SCAN_QR_CODE_SECOND' | translate }}<br>
+                        {{ 'TOP.SCAN_QR_CODE_THIRD' | translate }}<br>
+                    </p>
+                    <a class="link" (click)="show(2)">
+                        {{ 'TOP.TALK' | translate }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- app -->
+<div class="row app">
+    <div class="inner-content-app col-lg-10 ">
+        <h3 class="text-light-black d-flex">
+            <i class='fas fa-comment-slash mr-3' style='font-size:42px'></i>
+            <span>{{ 'TOP.TO_CREATE' | translate}}<br>
+                {{ 'TOP.DOWLOAD_TO_REQUIRED'  | translate}}</span>
+        </h3>
+        <div class="box-inner d-flex justify-content-evenly align-items-center">
+            <span>
+                <img src="assets/images/icon/ic_chrome.png">
+            </span>
+            <span>
+                <img src="assets/images/icon/ic_app_store.png">
+            </span>
+        </div>
+    </div>
+</div>
+
+<app-register-tele *ngIf="showRegis" (ouputRegister)="registerEmail($event)" [case_register]="case_register" [message]="result_text" (ouputClick)="listener($event)"></app-register-tele>
+
+<app-loading></app-loading>

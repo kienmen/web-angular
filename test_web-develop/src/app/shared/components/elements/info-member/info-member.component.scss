@@ -1,0 +1,137 @@
+.wrapper-modal {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    height: 100%;
+    width: 100%;
+    .content {
+        background-color: white;
+        padding: 30px;
+        margin: 0 10px;
+
+        p {
+            font-size: 20px;
+        }
+
+        div.function {
+            margin-top: 30px;
+            width: 100%;
+
+            button {
+                font-size: 15px;
+                min-width: 80px;
+            }
+        }
+    }
+
+    .content {
+        min-width: 320px;
+        position: relative;
+
+        .info {
+            width: 100%;
+            display: flex;
+
+            .avatar-wrapper {
+                padding: 0 10px;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .info-wrapper {
+            padding-left: 10px;
+
+            .top {
+                flex-direction: column;
+                margin-bottom: 100px;
+                height: 85px;
+
+                p {
+                    width: 100%;
+                }
+
+                p.text-bold {
+                    font-weight: 700;
+                    font-size: 20px;
+                }
+            }
+
+            .group {
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                word-break: break-all;
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 5px;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+
+        .function {
+            button {
+                width: 80%;
+            }
+        }
+
+        .alert-modal {
+            text-align: center;
+            img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%
+            }
+
+            .bold {
+                font-weight: 700;
+                font-size: 20px;
+
+            }
+
+            .message {
+                margin-top: 2rem;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .wrapper-modal {
+        align-items: flex-start;
+        padding-top: 8rem;
+        .content .info {
+            flex-direction: column;
+
+            .avatar-wrapper {
+                text-align: center;
+            }
+
+            .info-wrapper {
+                padding-left: 0;
+
+                .top {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

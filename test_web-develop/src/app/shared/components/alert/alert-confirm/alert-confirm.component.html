@@ -1,0 +1,7 @@
+<app-model-container-view [id]="id" [mode]="mode" [formGroup]="confirmForm" [title]="title" (save)="save()" (error)="error()" (cancel)="cancelForm()">
+    <div *ngIf="messageError">{{messageError | translate}}</div>
+    <div class="row">
+        {{message | translate}}
+    </div>
+
+</app-model-container-view>

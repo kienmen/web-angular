@@ -1,0 +1,51 @@
+.message {
+    margin-bottom: 2rem;
+    justify-content: flex-end;
+
+    .function {
+        margin-right: 10px;
+
+        .delete {
+            background-color: #9d9d9d;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+        }
+
+        span.text-grey {
+            font-size: 15px;
+        }
+    }
+
+    .content {
+        max-width: 500px;
+        min-width: 200px;
+        width: 60%;
+        min-height: 100px;
+        font-size: 1rem;
+        word-break: break-word;
+        border-radius: 2px;
+
+        img {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #dcc1c1;
+        }
+    }
+    .content.padding-content{
+        padding: 10px;
+    }
+
+}
+
+.left {
+    justify-content: flex-start;
+}
+
+.left-time {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 7px;
+    font-size: 15px;
+}

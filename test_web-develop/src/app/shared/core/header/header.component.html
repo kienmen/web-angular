@@ -1,0 +1,21 @@
+<div class="header back-ground-red">
+  <a class="link-home" routerLink="/dashboard" >Welltool</a>
+  <div class="action">
+    <div class="action_item">
+      <img (click)="logout()" style="cursor: pointer" src="assets/images/icon/ic_exit.png" alt="exit">
+    </div>
+    <div class="action_item">
+      <div class="dropdown">
+        <button
+          [ngStyle]="{'cursor':  data_blind.showdetail ==true|| data_blind.showdeletemessage ==true ||data_blind.showdelete ==true || data_blind.showblock ==true   || data_blind.showedit ==true? 'not-allowed': 'pointer'}"
+          (click)="showmenu()" class="dropbtn"><img src="assets/images/icon/ic_settings.png" alt="setting"></button>
+        <div id="menu" class="dropdown-content">
+          <a (click)="edit()"><i class="material-icons">edit</i>{{'ADMIN.FUNCTION.EDIT' |translate}}</a>
+          <a (click)="delete()"><i class="material-icons">delete</i>{{'ADMIN.FUNCTION.DELETE' |translate}}</a>
+          <a (click)="block()"><i style="margin-left: 5px;margin-right: 3px"
+              class='far fa-comment'></i>{{'ADMIN.FUNCTION.COMMENT' |translate}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<app-model-container-view [id]="id" [mode]="mode" [formGroup]="remarkForm" [title]="title" (save)="save()" (error)="error()">
+    <div class="custom-contain">
+        <div class="input-list flex-format">
+            <div class="input-include-label">
+                <div class="label-title">{{content}}</div>
+                <div class="input-include-error">
+                    <textarea type="text" formControlName="remark"></textarea>
+                    <span *ngIf="remarkForm.controls.remark.hasError('required')&&errorForm">Remark is required</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-model-container-view>

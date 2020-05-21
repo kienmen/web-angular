@@ -1,0 +1,205 @@
+:host {
+    display: block;
+    height: 92vh;
+}
+
+.wrapper {
+    height: 100%;
+
+    .inner-content {
+        position: relative;
+        display: flex;
+        height: 100%;
+
+        .modal-delete,
+        .modal-block {
+            position: absolute;
+            right: 0;
+            top: 0;
+            left: 250px;
+            z-index: 150;
+            bottom: 0;
+            animation-name: opacity-light;
+            animation-duration: 0.5s;
+        }
+
+        .modal-edit {
+            position: absolute;
+            right: 0;
+            top: 0;
+            left: 550px;
+            z-index: 150;
+            bottom: 0;
+            animation-name: opacity-light;
+            animation-duration: 0.5s;
+        }
+
+        .parent {
+            width: 250px;
+            min-width: 250px;
+            max-width: 250px;
+            border-right: solid 1px #e2e2e2;
+            position: relative;
+            label.label-search {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 5;
+                input{
+                    height: 50px;
+                }
+            }
+        }
+
+        .child {
+            width: 300px;
+            min-width: 300px;
+            max-width: 300px;
+        }
+
+        .messa {
+            width: 100%;
+            padding: 50px 30px;
+            overflow-x: auto;
+            border-right: unset !important;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #fafafa;
+
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            // background: transparent;
+            background: #d3d3d3;
+
+            border-radius: 2px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d3d3d3;
+        }
+
+        .group {
+            padding: 0;
+            height: 100%;
+            border-right: solid 1px #e2e2e2;
+
+            .content {
+                height: 100%;
+
+                p.title {
+                    background-color: #bc1220;
+                    color: white;
+                    font-size: 15px;
+                    font-weight: bold;
+                    padding: 15px;
+                    position: sticky;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    z-index: 100;
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 20px;
+                        margin-right: 5px;
+                    }
+
+                    i {
+                        position: absolute;
+                        right: 20px;
+                        display: none;
+                    }
+                }
+
+                .data {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: auto;
+                }
+            }
+        }
+    }
+}
+
+
+@media(max-width:768px) {
+    :host {
+        height: 100%;
+    }
+
+    .wrapper {
+        .inner-content {
+            flex-direction: column;
+
+            .parent {
+                border-right: none !important;
+            }
+
+            .group {
+                width: 100% !important;
+                max-width: unset;
+                min-width: unset;
+                border-right: none !important;
+
+                .content {
+                    height: auto;
+
+                    p.title {
+                        i {
+                            display: block !important;
+                        }
+                    }
+
+                    .data {
+
+
+                        #group,
+                        #group-member,
+                        #messa {
+                            max-height: 400px;
+                            overflow-y: auto;
+                            overflow-x: hidden;
+                        }
+                    }
+                }
+            }
+
+            .messa {
+                width: 100%;
+                max-height: 400px;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+
+            .modal-delete,
+            .modal-edit,
+            .modal-block {
+                left: 0;
+
+            }
+        }
+    }
+}
+
+@keyframes opacity-light {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

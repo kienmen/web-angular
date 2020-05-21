@@ -1,0 +1,24 @@
+<!-- Modal -->
+<div class="modal " [id]="id" role="dialog" data-backdrop="static">
+    <form novalidate [formGroup]="formGroup">
+        <div class="modal-dialog ">
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div class="modal-header text-left">
+                    <h4 class="modal-title">{{ title | translate}} </h4>
+                </div>
+                <div class="modal-body scrollable-menu">
+                    <ng-content></ng-content>
+                </div>
+                <div class="modal-footer">
+                    <button *ngIf="mode == crudType.CANCEL || mode == crudType.SAVE " (click)="saveData()"
+                        class="btn btn-white g-body-1" > {{'UTILS.CLOSE' | translate}}</button>
+                    <button *ngIf="mode == crudType.CONFIRM"
+                        (click)="saveData()" class="btn btn-white  g-body-1 "> {{'UTILS.OK' | translate}}</button>
+                    <button *ngIf="mode == crudType.SAVE" (click)="saveData()" class="btn btn-orange  g-body-1 ">{{"UTILS.SAVE"
+                            | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

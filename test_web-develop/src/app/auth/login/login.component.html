@@ -1,0 +1,43 @@
+<div class="container-fluid wrapper login back-ground-grey">
+  <div class="row head">
+    <div class="col-4 d-flex align-items-center flex-column text-center top">
+      <img src="assets/images/ic_logo.png">
+      <span class="text-black-well">Welltool</span>
+    </div>
+  </div>
+  <div class="row back-ground-red beetwen">
+    <p class="text-center">
+      {{ 'LOGIN.LOGIN' | translate}}
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 form " [formGroup]="formLogin">
+      <div class="form-group">
+        <label class="label d-flex align-items-center">
+          <img src="assets/images/icon/ic_user_login.png">
+          {{ 'LOGIN.ACCOUNT_NAME' | translate}}</label>
+        <input class="form-control" type="text" formControlName="account_name">
+        <p class="my-1 ml-4 text-errors" *ngIf="formErrors.account_name">
+          {{formErrors.account_name | translate}}
+        </p>
+      </div>
+      <div class="form-group">
+        <label class="label d-flex align-items-center">
+          <img src="assets/images/icon/ic_pass.png">{{ 'LOGIN.PASSWORD' | translate}}
+        </label>
+        <input class="form-control" type="password" formControlName="password">
+        <p class="my-1 ml-4 text-errors" *ngIf="formErrors.password">
+          {{formErrors.password | translate}}
+        </p>
+      </div>
+      <div class="form-function">
+        <button [disabled]="formLogin.invalid" (click)="handlelogin()"
+          class="btn btn-well-primary">{{ 'LOGIN.LOGIN' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-alert-confirm [id]="'alert-login'" [title]="message.title" [message]="message.message" [mode]="message.mode"
+  (saveConfirm)="saveConfirm()">
+</app-alert-confirm>
+<app-loading></app-loading>

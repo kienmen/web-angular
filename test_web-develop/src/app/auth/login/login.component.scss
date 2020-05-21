@@ -1,0 +1,53 @@
+.login{
+    min-height: 100vh;
+    .head{
+        background-color: white;
+    }
+    .top{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin:  0 auto;
+        img{
+            height: 50px;
+            width: 50px;
+        }
+        span{
+            font-size: 50px;
+            font-weight: 700;
+        }
+    }
+    .form{
+        padding: 40px 20px; 
+        margin: 0 auto;
+        .form-group{
+            margin-bottom: 24px;
+            .label{
+                img{
+                    width: 16px;
+                    margin-right: 5px;
+                }
+            }
+            .text-errors{
+                text-align: right;
+            }
+        }
+        .form-function{
+            text-align: center;
+            margin-top: 30px;
+            button{
+                width: 200px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+    }
+    .beetwen{
+        padding: 15px;
+        p{
+            width: 100%;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+}

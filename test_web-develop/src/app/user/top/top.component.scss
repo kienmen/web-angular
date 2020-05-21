@@ -1,0 +1,157 @@
+.header {
+    padding: 10px 100px;
+
+    a.link-home {
+        font-size: 45px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .options {
+        a {
+            cursor: pointer;
+            font-size: 25px;
+        }
+    }
+}
+
+
+.footer {
+    .inner-content-footer {
+        margin: 50px auto;
+
+        p {
+            font-size: 20px;
+        }
+
+        .info {
+            .logo {
+                img {
+                    width: 97px;
+                    height: 97px;
+                    margin-right: 2rem;
+                }
+
+                font-size: 70px;
+                font-weight: bold;
+                margin-bottom: 3rem;
+            }
+
+            .contact {
+                li {
+                    width: 100%;
+                    font-size: 25px;
+                    margin-bottom: 1rem;
+
+                    div {
+                        i {
+                            margin-left: 60px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:1200px) {
+    .header {
+        padding: 10px!important;
+    }
+
+
+}
+@media(max-width:768px) {
+    .header {
+        .options {
+            flex-direction: column;
+            text-align: right;
+        }
+    }
+
+
+}
+
+@media(max-width:576px) {
+    .header {
+        a.link-home {
+            font-size: 30px;
+        }
+
+        .options {
+            padding: 0;
+            a{  font-weight: bold;
+                font-size: 15px!important;
+            }
+        }
+    }
+
+    .banner {
+        .text {
+            font-size: 24px;
+        }
+    }
+
+    .footer {
+        .inner-content-footer {
+
+            .info {
+                .logo {
+                    font-size: 30px;
+                    margin-bottom: 2rem;
+                }
+
+                .contact {
+                    li {
+                        span {
+                            margin-bottom: 1rem;
+                        }
+
+                        i {
+                            margin-left: 0 !important;
+                            margin-right: 2rem;
+                        }
+
+                    }
+
+                    li.d-flex {
+                        flex-direction: column;
+
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media(max-width:414px) {
+
+    .footer {
+        .contact {
+            li {
+                font-size: 18px !important;
+
+                span {
+                    font-size: 18px !important;
+                }
+
+                i {
+                    margin: 0 !important;
+                    font-size: 24px !important;
+                }
+            }
+
+            li.d-flex {
+                div {
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+            }
+
+        }
+    }
+
+
+}

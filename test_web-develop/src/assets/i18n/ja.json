@@ -1,0 +1,129 @@
+{
+    "LOGIN": {
+        "LOGIN": "ログイン",
+        "ACCOUNT_NAME": "アカウント名",
+        "PASSWORD": "パスワード",
+        "EMAIL": "電子メール",
+        "LOGOUT": "ログイン",
+        "REGISTER":"登録",
+        "REGISTER_EMAIL":"メールを登録する"
+    },
+    "FORM_VALIDATE": {
+        "ACCOUNT_NAME_REQUIRED": "アカウント名ドが必要です",
+        "PASSWORD_REQUIRED": "パスワードが必要です",
+        "PASSWORD_MAX": "最大40文字のパスワード",
+        "PASSWOR_MIN": "少なくとも8文字のパスワードを入力してください",
+        "EMAIL_PATTERN": "電子メールは有効な電子メールでなければなりません",
+        "EMAIL_REQUIRED": "電子メールが必要です"
+    },
+    "ADMIN": {
+        "GROUP": {
+            "GROUP": "ルーム一覧",
+            "MEMBER": "メンバー一覧"
+        },
+        "FUNCTION": {
+            "EDIT": "ルーム編集",
+            "DELETE": "ルーム削除",
+            "COMMENT": "トーク削除"
+        },
+        "ALERT": {
+            "DO_YOU_WANNA_DELETE": "選択したトークルームを削除しますか？",
+            "CANCEL": "キャンセル",
+            "DELETE": "削除",
+            "DO_YOU_WANNA_BLOCK": "選択したトークルームの履歴をを削除しますか？",
+            "DO_YOU_WANNA_DELETE_MESSAGE": "このメッセージを削除しますか?"
+        },
+        "EDIT": {
+            "EDIT": "ルーム編集",
+            "ROOM_NAME": "ルーム名",
+            "PLACE_HOLDER_ROOM_NAME": "ルーム名を入力してください",
+            "VIEW_PASS_HISTORY": "過去履歴が見れる",
+            "NEW_USER_SETTING": "新規ユーザー設定",
+            "NOT_SEE_PASS_HISSTORY": "過去履歴が見れない",
+            "DELETE_SUCCESS": "成功しました",
+            "UPDATE": "更新"
+        },
+        "ROLE": {
+            "UPGRAGE": "アドミン権限付与",
+            "MALE": "男性",
+            "FEMALE": "女性",
+            "MESSAGE": "アドミン権限を付与しました。",
+            "JAPAN": "日本語",
+            "ENGLISH": "英語"
+        },
+        "MESSAGE": {
+            "NONE": "データがありません"
+        }
+    },
+    "ERRORS": {
+        "BACK": "バック"
+    },
+    "UTILS": {
+        "CLOSE": "閉じる",
+        "CANCEL": "キャンセル",
+        "OK": "OK",
+        "SAVE": "保存する",
+        "ERRORS": "エラー",
+        "SUCCESS": "完了",
+        "BACK":"バック",
+        "RESENT":"再送信",
+        "BACK_EMOJI":"「戻る」",
+        "SENT":"送った",
+        "MESSAGE":"ッセージを入力してください"
+    },
+    "TOP": {
+        "TERM_OF_SERVICE": "利用規約",
+        "POLICY": "プライバシーポリシー",
+        "THROUGHT_LANGUAGE": "言語の壁を超えた",
+        "BROADCASD": "コミュニケーションツール",
+        "CAN_ACCEPT_WITHOUT_DOWLOAD_APP": "ダウンロード無しでグループチャットが可能です",
+        "GIVE_PHONE_FIRST": "ご入力頂いた電話番号に",
+        "GIVE_PHONE_SECOND": "ショートメール",
+        "GIVE_PHONE_THIRST": "をお送りします。",
+        "TALK": "チャットを行う > ",
+        "SCAN_QR_CODE_FIRST": "QRコードをお読み取り",
+        "SCAN_QR_CODE_SECOND":"頂くとグループトーに",
+        "SCAN_QR_CODE_THIRD":"招待されます。",
+        "TO_CREATE":"1:1トーク、アカウント設定、トークルームの作成には",
+        "DOWLOAD_TO_REQUIRED":"アプリケーションのダウンロードが必要です。"
+    },
+    "REGISTER":{
+        "REGISTER":"電話番号の登録",
+        "SAVE":"次へ",
+        "PLACEHODER_TELE":"電話番号",
+        "PHONE_REQUIRED":"電話が必要です",
+        "PHONE_PATTERN":"電話が無効です 例えば: 810000000",
+        "REGISTER_SUCCESS":"メッセージを送信しました。登録を完了してください",
+        "REGISTER_ERROR":"システムは現在ビジーです。後で再試行してください"
+    },
+    "DASHBOARD":{
+        "HOME":"ホーム",
+        "POLICY":"プライバシーポリシー",
+        "TERMOFSERVICE":"利用規約",
+        "GROUP": "ルーム一覧"
+    },
+    "SCANNER": {
+        "NO_DEVIDER": "デバイスが選択されていません",
+        "RESULT":"結果",
+        "WAIT":"許可を待っています。",
+        "DEVICE_HAS_NOT_CAMERA":"デバイスにカメラがない場合、許可は求められません。",
+        "DENIED":"カメラの許可を拒否しました。それなしでは何もスキャンできません。",
+        "CHECK_DEVICE":"デバイスを確認できませんでした。",
+        "SECURITY_ERR":"これは、セキュリティエラーが原因である可能性があります。",
+        "NO_DEVICE_FOUND":"デバイスが見つかりませんでした。",
+        "BLEVIED":"お使いのデバイスにはメディアデバイスが接続されていません。",
+        "STATUS":"状態",
+        "PROPERTY":"物件",
+        "DEVICE":"装置",
+        "PERMISSTION":"許可",
+        "JOIN":"入室する",
+        "CANCLE":"キャンセル",
+        "SUCCESS":"正常に参加する",
+        "ROOM_NOT_FOUND":"部屋が見つかりません",
+        "SCANNER":"スキャン"
+    },
+    "ALERT":{
+        "NOT_AVALIABLE":"この機能を使用するにはアプリをダウンロードしてください",
+        "SEARCH":"検索..."
+    }
+}

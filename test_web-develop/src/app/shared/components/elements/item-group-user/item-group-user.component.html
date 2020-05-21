@@ -1,0 +1,14 @@
+<div [id]="item['conversation_id']" class="item text-grey d-flex align-items-center" [ngClass]="{'back-ground-light-black' : item['active'], 'text-white': item['active']}"
+    (click)="handleClick(item['id_user'])">
+    <img *ngIf="showImage" class="icon" src="{{(item['profile'] | link) || 'assets/images/icon/ic_user_default.png' }}"
+        onError="this.src='assets/images/icon/ic_user_default.png'" [ngClass]="{'avata': item['owner']&&!item['case']}">
+    <span [ngStyle]="{'font-weight': type ? 'bold' : 'normal' }">{{item['name'] | slicetext:15}} </span>&nbsp;&nbsp;
+    <span *ngIf="item['count']"> {{item['count']}}人</span>
+    <span *ngIf="item['nickname']">{{item['nickname']}}</span>
+    <span [ngClass]="{'border': item['active']}" class="owner back-ground-light-black text-white"
+        *ngIf="item['owner']&&item['case']==1">ownner</span>
+    <div class="notification d-flex flex-column  justify-content-center align-items-center" *ngIf="item['notifications']">
+        <span>{{item['updated']}}</span>
+        <span class="bg">{{item['notifications']}}</span>
+    </div>
+</div>

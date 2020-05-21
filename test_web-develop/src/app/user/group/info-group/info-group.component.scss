@@ -1,0 +1,77 @@
+.group {
+    background-color: #f8f8f8;
+    height: 92vh;
+
+    .inner-group {
+        .top-info {
+            height: 260px;
+            background-color: white;
+            padding: 30px;
+            width: 100%;
+            font-size: 35px;
+            font-weight: bold;
+
+            p {
+                width: 100%;
+                text-align: center;
+            }
+
+            hr {
+                border: 1px solid #f8f8f8;
+                width: 100%;
+            }
+
+            :first-child {}
+
+            :last-child {
+                img {
+                    width: 20px;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .bottom-info {
+            display: flex;
+            max-height: 200px;
+            padding: 30px 0;
+
+            .element {
+                line-height: 1.5;
+            }
+
+            .info-own {
+                width: 60%;
+
+                span {
+                    width: 70px;
+                    font-size: 15px;
+                }
+
+                p,
+                span {
+                    margin: 3px 0;
+                }
+
+                p.name {
+                    font-size: 26px;
+                }
+
+                p.nick {
+                    font-size: 25px;
+                }
+            }
+
+            .function {
+                width: 40%;
+                padding: 20px 0;
+
+                button {
+                    width: 100%;
+                    margin: 10px 0;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}

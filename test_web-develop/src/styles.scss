@@ -1,0 +1,8 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "./assets/theme/commons.scss";
+@import "./assets/theme/responsive.scss";
+
+select:focus, button:focus, li:focus{
+    outline: unset!important;
+    box-shadow: none!important;
+}
