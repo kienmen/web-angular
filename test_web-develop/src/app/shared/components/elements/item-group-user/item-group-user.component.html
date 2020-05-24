@@ -3,7 +3,7 @@
     <img *ngIf="showImage" class="icon" src="{{(item['profile'] | link) || 'assets/images/icon/ic_user_default.png' }}"
         onError="this.src='assets/images/icon/ic_user_default.png'" [ngClass]="{'avata': item['owner']&&!item['case']}">
     <span [ngStyle]="{'font-weight': type ? 'bold' : 'normal' }">{{item['name'] | slicetext:15}} </span>&nbsp;&nbsp;
-    <span *ngIf="item['count']"> {{item['count']}}人</span>
+    <span *ngIf="item['count']"> {{item['count']}}Person</span>
     <span *ngIf="item['nickname']">{{item['nickname']}}</span>
     <span [ngClass]="{'border': item['active']}" class="owner back-ground-light-black text-white"
         *ngIf="item['owner']&&item['case']==1">ownner</span>

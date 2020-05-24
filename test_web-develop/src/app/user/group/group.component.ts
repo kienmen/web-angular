@@ -595,6 +595,7 @@ export class GroupComponent implements OnInit {
   changelang(value) {
     this.data.messages = this.data.messages_translate[value];
     this.langservice.toogleLangTranslate(value);
+    this.langservice.toogleLang(value);
   }
 
   // Await tranlate
